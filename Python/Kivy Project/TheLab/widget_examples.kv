@@ -1,0 +1,74 @@
+#: set font "fonts/Lcd.ttf"
+#: set fnt_size dp(25)
+#: set fnt_color [1,.5,1,1]
+#: set wid_width "100dp"
+<WidgetExamples>:
+    cols: 3
+    #size_hint: .5,1
+    ToggleButton:
+        text: root.toggle_text
+        on_state: root.on_toggle_click(self)
+        font_name: font
+        font_size: fnt_size
+        color: fnt_color
+        size_hint: None,1
+        width: wid_width
+    Button:
+        text: "Counter"
+        disabled: root.cnt_btn_disable
+        on_press: root.on_button_click()
+        font_name: font
+        font_size: fnt_size
+        color: fnt_color
+        size_hint:1,1
+    Label:
+        text: root.cnt_lbl_text
+        font_name: font
+        font_size: fnt_size
+        color: fnt_color
+
+    Switch:
+        size_hint: None,1
+        width: wid_width
+        on_active: root.on_switch_click(self)
+
+    Slider:
+        orientation: "vertical"
+        value: 50
+        disabled: not root.slide_disable
+        on_value: root.on_slider_change()
+        id: Slider1
+
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: str(int(Slider1.value))
+            ont_name: font
+            font_size: dp(100)
+            color: fnt_color
+            font_name: font
+        ProgressBar:
+            value: Slider1.value
+
+    TextInput:
+        hint_text:"Enter Value"
+        size_hint: None,.1
+        width: wid_width
+        multiline: False
+        on_text_validate: root.on_text_enter(self)
+
+    Label:
+        text: ""
+        id: Label1
+
+<ImageExamples>:
+    cols: 3
+    Image:
+        source: "images/cake.jpg"
+    Image:
+        source: "images/cake.jpg"
+        allow_stretch: True
+    Image:
+        source: "images/cake.jpg"
+        allow_stretch: True
+        keep_ratio: False

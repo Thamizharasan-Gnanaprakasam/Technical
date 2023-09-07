@@ -1,50 +1,59 @@
 <MainMenu>:
-    Button:
-        text: "Canvas Example"
-        on_press:
-            root.manager.current = 'canvas'
-
-<CanvasWindow>:
     BoxLayout:
-        orientation: "vertical"
-        #size_hint: root.size
-        StackLayout:
-            id: Stack1
-            height: 200
-            spacing: dp(10)
-            orientation: "lr-tb"
-            size_hint: 1,.10
-            #pos_hint: {"top": 1, "height": .2}
-            Button:
-                text: "Example 1"
-                size_hint: .14, 1
-                on_press: root.on_button_press(self)
-            Button:
-                text: "Example 2"
-                size_hint: .14, 1
-                on_press: root.on_button_press(self)
-            Button:
-                text: "Example 3"
-                size_hint: .14, 1
-                on_press: root.on_button_press(self)
-            Button:
-                text: "Example 4"
-                size_hint: .14, 1
-                on_press: root.on_button_press(self)
-            Button:
-                text: "Example 5"
-                size_hint: .14, 1
-                on_press: root.on_button_press(self)
-            Button:
-                text: "Example 6"
-                size_hint: .14, 1
-                on_press: root.on_button_press(self)
-            Button:
-                text: "Example 7"
-                size_hint: .14, 1
-                on_press: root.on_button_press(self)
-        BoxLayout:
-            id: Box1
+        Button:
+            text: "Canvas Example"
+            on_press:
+                root.manager.current = 'canvas'
+        Button:
+            text: "Widget Example"
+            on_press:
+                root.manager.current = 'widgets'
+        Button:
+            text: "Layout Example"
+            on_press:
+                root.manager.current = 'layouts'
+
+#<CanvasWindow>:
+#    BoxLayout:
+#        orientation: "vertical"
+#        #size_hint: root.size
+#        StackLayout:
+#            id: Stack1
+#            height: 200
+#            spacing: dp(10)
+#            orientation: "lr-tb"
+#            size_hint: 1,.10
+#            #pos_hint: {"top": 1, "height": .2}
+#            Button:
+#                text: "Example 1"
+#                size_hint: .14, 1
+#                on_press: root.on_button_press(self)
+#            Button:
+#                text: "Example 2"
+#                size_hint: .14, 1
+#                on_press: root.on_button_press(self)
+#            Button:
+#                text: "Example 3"
+#                size_hint: .14, 1
+#                on_press: root.on_button_press(self)
+#            Button:
+#                text: "Example 4"
+#                size_hint: .14, 1
+#                on_press: root.on_button_press(self)
+#            Button:
+#                text: "Example 5"
+#                size_hint: .14, 1
+#                on_press: root.on_button_press(self)
+#            Button:
+#                text: "Example 6"
+#                size_hint: .14, 1
+#                on_press: root.on_button_press(self)
+#            Button:
+#                text: "Example 7"
+#                size_hint: .14, 1
+#                on_press: root.on_button_press(self)
+#        BoxLayout:
+#            id: Box1
 
 
 

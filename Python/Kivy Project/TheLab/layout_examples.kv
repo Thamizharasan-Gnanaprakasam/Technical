@@ -1,0 +1,96 @@
+<PageLayoutExample>:
+    MainWidgetExample:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayoutExample:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    AnchorLayoutExample:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    GridLayoutExample:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    ScrollViewExample:
+        canvas.before:
+            Color:
+                rgba: 1, 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+
+
+<ScrollViewExample>:
+    StackLayoutExample:
+        size_hint: 1, None
+        height: self.minimum_height
+
+<GridLayoutExample>:
+    cols: 3
+    Button:
+        text: "A"
+    BoxLayoutExample:
+    Button:
+        text: "C"
+
+<AnchorLayoutExample>:
+    anchor_x: "center"
+    anchor_y: "top"
+    BoxLayout:
+        size_hint: .2,.2
+        Button:
+            text: "Vertical"
+            size_hint: None, None
+            #size: "100dp", "100dp"
+            #pos_hint: 0, 0
+            size: self.size
+        Button:
+            text: "Horizontal"
+            size_hint: None, None
+            #size: "100dp", "100dp"
+            #pos_hint: 200, 0
+            size: self.size
+
+
+
+<BoxLayoutExample>:
+    Button:
+        text: "Vertical"
+        on_press: root.on_button_click(self.text)
+    Button:
+        text: "Horizontal"
+        on_press: root.on_button_click(self.text)
+
+<MainWidgetExample>:
+    Button:
+        text: "Button"
+        size: "100dp", "100dp"
+        pos: 100, 200
+
+    Label:
+        text: "Label"
+        size: "100dp", "100dp"
+        pos: 200,400
+        color: 1, 0, 0, 1
+
+    TextInput:
+        hint_text: "Please Enter"
+        size: "100dp", "100dp"
+        pos: 500, 800
