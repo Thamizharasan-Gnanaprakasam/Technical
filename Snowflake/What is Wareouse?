@@ -1,0 +1,15 @@
+What is Wareouse?
+	WH is nothing but a Database containing data from Data source with help of ETL
+	There are 3 Layers in Data Warehouse:
+		1. Raw Data (Stage Location): Where the data from different source will be loaded as raw file. Can be INternal or External
+		2. Data Integeration: Combine data from different Raw file (Data Transformation)
+		3. Access layer: helps for reporting, Data Analytics and Data can be used by other Applications though this layer
+
+	Layers:
+		Application 	- Managed by the Vendor company (us) using SF
+		Software		- Managed by SF
+		Data 			- Managed by SF
+		OS 				- Managed by SF
+		Virtual Machine - Managed by AWS or Azure or GCP
+		Physical Storage- Managed by AWS or Azure or GCP
+		Physical Servers- Managed by AWS or Azure or GCP

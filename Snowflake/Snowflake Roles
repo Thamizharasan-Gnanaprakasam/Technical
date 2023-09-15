@@ -1,0 +1,23 @@
+Snowflake Roles:
+
+ACCOUNTADMIN:
+	> SYSADMIN and SECURITYADMIN
+	> Top level role in the system
+	> Granted to limited number of users
+
+SYSADMIN:
+	> Can manage to create DB objects (Warehouse, DB, other object creations)
+	> All custom role privilages should be granted to thie role
+
+SECURITYADMIN:
+	> User Admin role granted to this role
+	> Can manage users and roles
+	> Can manage any object granted globally
+
+USERADMIN:
+	> Dedicated to users and roles
+	> can create users and roles
+
+PUBLIC:
+	> Created for all users by defualt
+	> Can create own objects like every other roles

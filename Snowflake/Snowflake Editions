@@ -1,0 +1,29 @@
+Snowflake Editions:
+
+Standard:
+	> Entery level
+	> Complete Data WH
+	> Automatic Data Encryption
+	> Time travel upto 1 day
+	> Disaster recovery for upto 7 days beyond time travel
+	> secure data share
+	> Custoomer support 24/7
+
+Enterprice:
+	> Include all standard Features
+	> Time travel upto 90 days
+	> Multi-cluster WH
+	> Materlized View
+	> Search Optimization
+	> Cloumn-level security
+
+Business Critical:
+	> Include all Enterprise Feature
+	> Addition security feature such as Data encryption everywhere
+	> Extended Support
+	> Database Failover and DR
+
+Virtual Private:
+	> To get this Edition, company has to reach out to Snowflake team personally
+	> Include all Business Critical Feature
+	> Dedicated Virtual Servers and completed seperate snowflake environment

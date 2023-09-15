@@ -1,0 +1,21 @@
+Snowflake Pricing:
+Compute:
+	> Charged for active WH per hour
+	> depends on WH size
+	> Billed by seconds (min of 1 min)
+	> Charged of SF credits
+
+Storage:
+https://www.snowflake.com/pricing/
+	> Monthly storage fee
+	> Based on Avg storage used per month
+	> cost calcualted after compression
+	> Managed by cloud providers
+
+	Type:
+		On demand
+			> Pay only for what we use
+			> $40/TB
+		Capactiy Storage
+			> Pay only for defined capacity upfront
+			> $23/TB
