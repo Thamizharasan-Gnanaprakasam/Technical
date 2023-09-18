@@ -1,0 +1,13 @@
+Stages are Different from WH
+2 types of Stages
+	> External Stages
+		- External Cloud providers
+			a. S3
+			b. Soosple Cloud Platform
+			c. Azure
+		- It's a DB object created within schema
+		- Create stage (url, access setting)
+		- Cost may vary based on region and platform we use
+
+	> Internal Stages
+		- Storage mentained by Snowflake
