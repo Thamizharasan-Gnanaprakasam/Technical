@@ -5,7 +5,7 @@ Loading Data:
 		c. Load data from stages
 		d. Transformation if possible
 		e. Copy command
-	> Continous Loading
+	> Continuous Loading
 		a. For small volume of data
 		b. Happen automatically once the data available in stage
 		c. Uses snowpipe (serverless feature)
