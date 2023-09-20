@@ -1,0 +1,8 @@
+Commands for Qt Designer, QUiLoader and QCreator
+
+To Open QDesigner: pyside6-designer
+To Compile ui: pyside6-uic widget.ui > ui_widget.py
+To Complie Resource File: pyside6-rcc resource.qrc -o resource_rc.py
+
+:/images/minus-button_4436695.png
+:/images/plus_4315609.png
