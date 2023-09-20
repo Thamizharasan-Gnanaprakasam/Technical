@@ -1,0 +1,3 @@
+GCP URL: https://console.cloud.google.com/welcome/new?project=modern-tangent-399622
+	> Navigate to Cloud Storage from Menu -> Storage and create the Bucket
+	> Add files in the bucket

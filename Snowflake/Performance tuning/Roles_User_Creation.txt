@@ -1,0 +1,73 @@
+/*
+Snowflake will take care of automatic micro-partitions
+For Better Performace
+    > Assign appropriate Data Types
+    > Sizing virtaul WH
+    > creating Cluster keys
+*/
+/*
+Dedicated Warehouse
+    > Differenct WH accopring to different Workloads
+    > Identify and classify Different groups of workloads (eg: BI, Reporting, Marketing) -> Create Virtual H based on the classification
+    > Consideration: Avoid creating too many WH to reduce underutilized WHs
+    > Refining patterns - Work pattern can change
+Scaling Up/Down
+    > Multiple WH for known patterns of high workloads
+    > Change the WH Size
+Scaling out (Multi Cluster)
+    > For unknow patterns of high workloads
+Maximum Cache Usage
+    > automatic caching can be maximized
+    > If query executed twice, results are cached and re-used
+    > Result can be cached for 24 horus or underlying data has chnaged
+Cluster key
+    > For large Tables
+*/
+
+--CREATE WAREHOUSE
+CREATE OR REPLACE WAREHOUSE DS_WH
+WAREHOUSE_SIZE = SMALL,
+WAREHOUSE_TYPE = STANDARD,
+MIN_CLUSTER_COUNT = 1,
+MAX_CLUSTER_COUNT = 1,
+SCALING_POLICY = STANDARD,
+AUTO_SUSPEND = 300,
+AUTO_RESUME = TRUE,
+INITIALLY_SUSPENDED = TRUE;
+
+
+CREATE OR REPLACE WAREHOUSE DBA_WH
+WAREHOUSE_SIZE = XSMALL,
+WAREHOUSE_TYPE = STANDARD,
+MIN_CLUSTER_COUNT = 1,
+MAX_CLUSTER_COUNT = 1,
+SCALING_POLICY = STANDARD,
+AUTO_SUSPEND = 300,
+AUTO_RESUME = TRUE,
+INITIALLY_SUSPENDED = TRUE;
+
+--CREATE ROLES
+
+CREATE OR REPLACE ROLE DATA_SCIENTIST;
+GRANT USAGE ON WAREHOUSE DS_WH TO ROLE DATA_SCIENTIST;
+
+CREATE OR REPLACE ROLE DBA;
+GRANT USAGE ON WAREHOUSE DBA_WH TO ROLE DBA;
+
+--CREATE USERS
+CREATE OR REPLACE USER DS1 LOGIN_NAME = 'DS1', PASSWORD = 'DS1', DEFAULT_WAREHOUSE = DS_WH, DEFAULT_ROLE = DATA_SCIENTIST, MUST_CHANGE_PASSWORD =FALSE;
+CREATE OR REPLACE USER DS2 LOGIN_NAME = 'DS2', PASSWORD = 'DS2', DEFAULT_WAREHOUSE = DS_WH, DEFAULT_ROLE = DATA_SCIENTIST, MUST_CHANGE_PASSWORD =FALSE;
+CREATE OR REPLACE USER DS3 LOGIN_NAME = 'DS3', PASSWORD = 'DS3', DEFAULT_WAREHOUSE = DS_WH, DEFAULT_ROLE = DATA_SCIENTIST, MUST_CHANGE_PASSWORD =FALSE;
+
+--GRANT ROLES TO USERS
+GRANT ROLE DATA_SCIENTIST TO USER DS1;
+GRANT ROLE DATA_SCIENTIST TO USER DS2;
+GRANT ROLE DATA_SCIENTIST TO USER DS3;
+
+--CREATE USERS - DBA
+CREATE OR REPLACE USER DBA1 LOGIN_NAME = 'DBA1', PASSWORD = 'DBA1', DEFAULT_WAREHOUSE = DBA_WH, DEFAULT_ROLE = DBA, MUST_CHANGE_PASSWORD = FALSE;
+CREATE OR REPLACE USER DBA2 LOGIN_NAME = 'DBA2', PASSWORD = 'DBA2', DEFAULT_WAREHOUSE = DBA_WH, DEFAULT_ROLE = DBA, MUST_CHANGE_PASSWORD = FALSE;
+
+--GRANT ROLES TO USERS
+GRANT ROLE DBA TO USER DBA1;
+GRANT ROLE DBA TO USER DBA2;

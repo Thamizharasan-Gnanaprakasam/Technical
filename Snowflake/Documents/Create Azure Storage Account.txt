@@ -1,0 +1,6 @@
+portal.azure.com
+
+1. Create Storage Account
+	> Provide Resouce Name and Storage account Name (Bucket) to create storage Account
+
+2. Create Container inside Storage account and place files in container
