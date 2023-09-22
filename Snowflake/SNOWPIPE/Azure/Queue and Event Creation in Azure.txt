@@ -1,0 +1,25 @@
+/*
+Azure Container - EVEN NOTIFICATION -> QUEUE STORGAE (KIND OF A STROAGE WHICH STORE NOTIFICATION OR MESSAGE) - NOTIFICATION INTEGRATION (CREATED IN SF) -> SERVERLESS LOAD (SNOWPIPE) -> SF TABLE
+*/
+
+Queue and Event Creation in Azure
+
+Queue:
+Storage Account -> Queues -> click on "+ Queue" and provide Queue name
+
+Events:
+Storage Account -> Events -> click on "+ Event Supscription"
+	Name: Give Notification Name
+	Event Schema: Select "Event Grid Schema"
+	System Topic Name: Same as Name
+	Filter to Event Type: Blob Created
+	Endpoint Type: Storage Queue
+	Endpoint:
+		Subscription: our subscription
+		Storage Account: Select the Storage account we use
+		Queue: select existing queue that we created in step 1 and click on select and the click on Create after the below step
+
+	Before Clicking Create, go to Home -> Subscription -> click on our subscription -> Resource Provider -> Search for EventGrid, select Microsoft.EventGrid and click on Regsiter
+
+Assign Role to the Notification:
+	Home -> Storage Account -> Our Storage Account -> Access Contrl (IAM) -> "+ Add" -> Role Assignment -> Select Storage Blob Data Contributor -> add member (Notification Name) -> Create
