@@ -1,0 +1,6 @@
+Fail Safe
+	> This is used for the data protection
+	> Fail safe period is set as non configurable 7 days for all physical tables and 0 days for Transient table
+	> Tables will go into Fail safe mode once the retention period is end
+	> No User interaction & only Snowflake support team can help to reterive these data
+	>Contribute storage cost
