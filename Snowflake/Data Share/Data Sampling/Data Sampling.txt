@@ -1,0 +1,14 @@
+Data Sampling
+	> The use case of Data Sampling is for Data Analysis on a randam sample data istead of quyerying the big table
+	> Effective on compue cost
+
+Methods:
+	> Row or Bernoulli
+		- Probablity of choosing each row with percentage p
+		- more Randomness
+		- More useful while getting sample data from smaller table
+
+	> Block or System  
+		- Probablity of chossing each block (micropartition) with percentage p
+		- More effective processing
+		- More useful while getting sample data from lagre table

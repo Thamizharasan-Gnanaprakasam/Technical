@@ -1,0 +1,4 @@
+Data Sharing
+	> can do data sharing without doing actual copy
+	> Only the owner of the object owns the compute power.
+	> Non-SF users can access this data using Reader account

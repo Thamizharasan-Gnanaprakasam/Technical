@@ -1,0 +1,4 @@
+Sharing Data with Non-SF Account
+	> Create a Reader Account
+		Independent instance with own url and compute resource
+	>create data share
