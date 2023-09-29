@@ -1,0 +1,47 @@
+Stages:
+	> Internal Stage
+		. Managed by Snowflake (cloud provider which we can't modify as SF manage it)
+		Type:
+			User Stage
+			Table Stage
+			Named Stage
+
+	> External Stage:
+		Storage provided by AWS, GCP, Azure
+
+
+User Stage:
+	> Tied to the user
+	> Can't accessed by other users
+	> Every users has default stage
+	> can't be altered or dropped
+	> Put files to the stage before loading
+	> Explicitly removes files to avoid storage cost
+	> Loading to multiple tables
+	> referred to with '@~'
+
+Table Stage:
+	> Automatically created with a table
+	> can only access by one table
+	> can't be altered or dropped
+	> Load to one table
+	> referred to with '@%TABLE_NAME'
+
+Named Stage:
+	> CREATE STAGE
+	> Snowflake database object
+	> Everyone with privilege can access it
+	> Most flexible
+	> referred to with '@STAGE_NAME'
+
+Snowpipe:
+	Serverless -> Cost calculated per sec/per-core granulatiry
+	File size - 100MB to 250MB
+	Snowpipe Load_HISTORY metadata stored for 14 Days
+Snowpipe Methods:
+	> Cloud Messaging
+		. Event Notification
+		. External Stages
+	> Rest API
+		. Call REST API ENdpoints
+		. Both Internal and External Stages
