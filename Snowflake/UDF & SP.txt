@@ -1,0 +1,22 @@
+UDF
+	Languages Supported
+		SQL
+		Java
+		Python
+		Javascript
+
+Stored Procedures:
+	May or may not return value
+	Can Use session variables
+	deligation of adimn tasks
+
+execute as caller/owner next to the SP name
+
+
+
+External Function
+
+CREATE OR REPLACE EXTERNAL FUNCTION MY_AZ_FUNC(STRING_COL VARCHAR)
+RETURNS VARIANT
+api_integration = azure_external_api_integration
+as 'url'

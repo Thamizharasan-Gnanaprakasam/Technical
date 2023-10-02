@@ -1,0 +1,30 @@
+Unstructured Data
+	TO access a Image from Stage
+		1. Scoped URL
+			Encoded URL with temporary access to the file (no access to Stage)
+			Expire when persisted result ends (ie result cache expired). default 24 hours
+			called using BUILD_SCOPED_FILE_URL function
+		2. File URL
+			Permitted prolong access to the specific file
+			Does not expire
+			BUILD_STAGE_FILE_URL
+		3. Presigned URL
+			HTTP URL used to access via a web browser
+			expiration time is configurable. No need to pass authentication token
+			GET_PRESIGNED_URL
+
+BUILD_SCOPED_FILE_URL(@stage_name,'file_name with path')
+BUILD_STAGE_FILE_URL(@stage_name,'file_name with path')
+GET_PRESIGNED_URL(@stage_name,'file_name with path',60); 60 -> expiration time in seconds
+
+Directory Table:
+	Table that stores the metadata of the stage files
+	It's not a physical table but layered in stage
+	Can be queried with sufficeint privileges (on stage)
+	Reterive (scoped) file URL to access file
+	Need to be enables for stage by DIRECTORY = (ENABLE = TRUE)
+
+	SELECT * FROM DIRECTORY(@STAGE_NAME);
+
+	ALTER STAGE STAGE_NAME REFRESH;
+

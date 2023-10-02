@@ -1,0 +1,27 @@
+Data Transformation
+	Supports:
+		Column Reordering
+		Cast data types
+		Remove columns
+		truncatecolumns
+		Subset of SQL functions
+	Not supported:
+		Flatten function
+		Aggregate functions
+		Group by
+		Joins
+		Where clause
+
+Functions:
+	Scalar Function: Returns one value per invocation -> SELECT DAYOFWEEK('2017-10-27');
+	Aggregate Function: Math funcitons (MIN & MAX)
+	Window Functions: RowNumber() over ()
+	Table Function: select * from table(validate('table_name', job_id => '_last'))
+	System Functions: select SYSTEM$PIPESTATUS()
+	UDF & External Functions
+
+Estimating Functions:
+	Number of Distinct Values -> HLL() -> HyperLogLog algorithm -> with 1% error -> to count distinct values
+	Frequent Values -> APPROX_TOP_K(column, k, count) -> Space saving Algorithm -> k- number of return value, count is for accurate result, count >> k
+	Percentile Values -> APPROX_PRECENTILE(column, percentile) -> t-digist algorithm
+	Similarity of tow ro more sets -> approximate_similarity(minhash(k, column)) -> no. of hash 

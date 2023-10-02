@@ -1,0 +1,9 @@
+Snowpark:
+	Currently supports 3 languages
+	1. Python -> Build app and query data ouside the system. Convert Python code to Snowflake and execute code within snowflake using serverless compute power
+	2. Java
+	3. Scala
+
+	Lazy Evaluation -> Expression is not evaluated until it is needed
+	Pushdown -> Code is pushed to snowflake and execute there
+	UDFs inline -> Created function can be executed in UDFs
