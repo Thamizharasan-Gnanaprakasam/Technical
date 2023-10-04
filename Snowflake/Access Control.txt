@@ -1,0 +1,41 @@
+Access Control
+	Descretionary Access Control (DAC)
+		Each object has a owner
+		Owner can grant priveleges to the object
+	Role Based Access Control (RBAC)
+		grant Privileges of object to role
+		role will be assigned to users
+
+Privileges
+	WH:
+		MODIFY -> grant this privilege to edit the WH
+		MONITOR -> grant this to see the queries executed using this Privilage
+		OPERATE -> This is to suspend or resume the WH
+		USAGE -> This is to execute the query using the WH
+		OWNERESHIP -> Owner of the WH
+		ALL
+
+	DB
+		MODIFY
+		MONITOR
+		USGAE
+		REFERENCE_USAGE -> when an object (e.g. a shared secure view) is used to reference another object in a different database
+		CREATE SCHEMA
+		OWNERSHIP
+		ALL
+
+	Stages:
+		READ -> to perform read on Internal Stage (GET, LIST, Copy)
+		USAGE -> To use exterrnal stage. not for Internal Stage
+		WRITE -> To perform wirte on Internal stage (PUT, Removee)
+		ALL
+		OWNERSHIP
+
+	Table:
+		SELECT
+		INSERT
+		DELETE
+		TRUNCATE
+		UPDATE
+		ALL
+		OWNERSHIP
