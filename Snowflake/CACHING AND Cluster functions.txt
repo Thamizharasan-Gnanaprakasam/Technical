@@ -1,0 +1,14 @@
+Cloud Services -> 
+    Metadata Cache -> stores the meadata of the object. Used to get count, min/max from a table
+    Cache Result -> Stores the query result. Available for 24 hours and last upto 31 days if the query result is reused
+
+Query Processing -> 
+    Data Cache or Data Store -> Stores the data in the SSD available within the WH
+    Data will be purged if the WH is changed or resized
+
+Cloud Storage:
+    Remote Disk
+
+CLUSTER function
+    select SYSTEM$CLUSTERING_INFORMATION('COPY_DB.SECOND_SCHEMA.EMPLOYEES');
+    select SYSTEM$CLUSTERING_DEPTH('COPY_DB.SECOND_SCHEMA.EMPLOYEES');

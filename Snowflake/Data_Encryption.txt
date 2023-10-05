@@ -1,0 +1,17 @@
+--Standard Edition
+All data is encrypted at rest and in transit
+
+Data in Rest
+    AES 256-bit encryption - Managed by snowflake
+    Key rotation every 30 days - new key will be assigned to updated data
+    old keys will be destroyed
+    
+    rekeying every year for all tables and available from Enterprise edition
+
+Data in Trasit:
+    Used for all Interface - WebUI, Snowsql, JDBC, ODBC, Python connector
+    TLS 1.2
+
+Tri-Secret Secure:
+    Customer can create their own keys - available from Business Critical 
+    Customer Manager Key (Azure key vault) + Snowflake Managed Key = Master key (Composite key)

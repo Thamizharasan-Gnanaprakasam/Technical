@@ -1,0 +1,33 @@
+Multifactor Authentication
+    - Additional Security
+    - Powered by DUO Security but managed by Snowflake
+    - No Signup, only installation
+    - Standard Edition
+    - Per default enable for accounts but requires for user to enroll
+    - Recommanded for ACCOUNTADMIN
+    - SecurityADMIN can disable MFA
+    - Supprted for WebUI, SnowSQL, JDBC, ODBC, Python Connector
+MFA Token Caching
+    - Reduce no. of promts during authenticaion
+    - Need to enable first
+    - Token valid for 4 hours
+    - ODBC, JDBC and Python Connector
+Federated Authentication (SSO)
+    - Enable SSO
+    - Provided my Federated env. 
+        Service Provider - SF, External ID Provider - Managing  Credentials and Authenticate Users
+        External Providers - most SAML 2.0 complient venders supported and Native support for Okta and MS AD FS
+    SCIM 2.0
+        - SF compatible with SCIM 2.0
+        - SCIM is an Open standard for automating user provisioning
+            Create User in ID Provider -> provision user to SF
+Key Pair Authentication
+    - Alternate for Regular user name password
+    - one or two Public Key and one Private key
+    - Used for SnowSQL
+    - 2048-bit RSA
+
+    Generate Private Key and Public key and store locally
+    assign public key to the user
+    Configure client to use key pair authentication 
+        Alter user user_name SET RSA_PUBLIC_KEY 'KEY'

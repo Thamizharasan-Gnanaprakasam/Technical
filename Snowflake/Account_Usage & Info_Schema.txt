@@ -1,0 +1,32 @@
+Account Usage:
+    Long-term Histroy usage data
+    Object metadata
+    Not real time, takes 45 mins - 3 Hours latency
+    Retention: 365 days
+    this Include both dropped objects and the available ones
+    ACCOUNTADMIN - can see all the views and functions
+
+Information Schema:
+    Parent DB (created in all DB in the account) + account level
+    Histrical Data usage
+    Object Metadata
+    Realtime data
+    Retention 7 days - 6 months
+    This include only non dropped objects
+    Read only
+    Output depends on privileges
+
+Releases
+    Weekly Release
+        Full Release
+            New Features
+            Enchancement or update
+            Bug fixes
+            Behavior Changes -> Monthly, Impact on workload
+        Patch Release
+            Bug Fixes
+
+    Three Stage approach
+        Day 1 -> Early access -> only from Enterprise Edition
+        Day 1 or 2 -> Regular Access -> from Standard Edition
+        Day 2 -> Final Release -> Enterprise Edition
