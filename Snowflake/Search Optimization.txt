@@ -1,0 +1,19 @@
+Search Optimization
+	Available from Enterprise Edition
+	Imporive the performace of certain type of lookup and analytical queries
+	Create a Search Access path for the tables
+	Add Search Optimization to columns
+
+	Beneficial Queries
+		Selective point lookup -> Return on one or few rows
+		Equality predicates (=) or IN predicates -> WHERE amount = 1
+		Substring or regular expresion search -> LIKE, ILIKE
+		Selective Geospatial function -> with GEOGRAPHY values
+
+	Mainted by Snowflake
+	Severless Credits will be charged
+	Storage cost for Search Access path
+
+Syntanx to add Serach optimization
+	ALTER TABLE TABLE_NAME ADD SEARCH OPTIMIZATION; --> OWNERSHIP PRIVILEGES ON TABLE OR ADD SEARCH OPTIMIZATION PRIVILEGE ON SCHEMA
+	ALTER TABLE TABLE_NAME ADD SEARCH OPTIMIZATION ON GEO(COL);
