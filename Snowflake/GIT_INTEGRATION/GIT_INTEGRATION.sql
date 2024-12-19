@@ -29,3 +29,27 @@ ALTER GIT REPOSITORY GIT_INTEGRATION_DEMO FETCH;
 LS @GIT_INTEGRATION_DEMO/branches/main;
 
 EXECUTE IMMEDIATE FROM @git_integration_demo/branches/main/demo.sql;
+
+
+--WITH CREDENTIALS
+CREATE OR REPLACE API INTEGRATION TAMIL_GIT
+api_provider = git_https_api
+api_allowed_prefixes = ('https://github.com/kameshsampath')
+enabled = true
+ALLOWED_AUTHENTICATION_SECRETS = ALL;
+
+CREATE OR REPLACE SECRET PASS
+TYPE = PASSWORD
+USERNAME = 'Thamizharasan-Gnanaprakasam'
+PASSWORD = 'Ayla@23#';
+
+CREATE OR REPLACE GIT REPOSITORY git_int_demo
+API_INTEGRATION = TAMIL_GIT
+GIT_CREDENTIALS = PASS
+origin = 'https://github.com/kameshsampath/sf-git-integration-demo.git';
+
+ALTER GIT REPOSITORY git_int_demo FETCH;
+
+ls @git_int_demo/branches/main;
+
+EXECUTE IMMEDIATE FROM @git_int_demo/branches/main/demo.sql;
